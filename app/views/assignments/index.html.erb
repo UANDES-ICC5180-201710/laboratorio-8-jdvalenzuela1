@@ -8,7 +8,9 @@
       <th>Title</th>
       <th>Statement</th>
       <th>Grades</th>
-      <th colspan="3"></th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -20,6 +22,8 @@
         <td>
           <%= link_to 'Grades', course_assignment_grades_path(assignment_id: assignment.id) %>
         </td>
+        <td><%= assignment.start_date %></td>
+        <td><%= assignment.end_date %></td>
         <td><%= link_to 'Show', [@course, assignment] %></td>
         <td>
           <%= link_to 'Edit', edit_course_assignment_path(id: assignment.id) %>

@@ -24,4 +24,40 @@
 
 <br>
 
-<%= link_to 'New Enrollment', new_course_enrollment_path %>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEnrollment">
+  Add existing student
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addEnrollment" tabindex="-1" role="dialog" aria-labelledby="addEnrollmentLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addEnrollmentLabel">Add existing student</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'enrollments/form', course: @course, enrollment: Enrollment.new %>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPersonAndEnrollment">
+  Create Person
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addPersonAndEnrollment" tabindex="-1" role="dialog" aria-labelledby="addPersonAndEnrollmentLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addPersonAndEnrollmentLabel">Add student</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'people/form', course: @course, person: Person.new %>
+      </div>
+    </div>
+  </div>
+</div>

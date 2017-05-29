@@ -11,7 +11,15 @@
  * It is generally better to create a new file per style scope.
  *
  */
-
+// import bootstrap-sprockets before bootstrap if using bootstrap >= 3.2
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'bootstrap-datetimepicker';
 @import "*";
+
+.table > thead > tr > th {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background-color: darken(#428bca, 6.5%);
+  color: white;
+}

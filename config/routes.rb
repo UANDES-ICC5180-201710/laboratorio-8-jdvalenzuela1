@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   end
   authenticate :person do
     resources :courses do
+      get "enrollments/enrollment_existing" => 'enrollments#enrollment_existing', :as => :enrollment_existing
+      get "enrollments/enrollment_new" => 'enrollments#enrollment_new', :as => :enrollment_new
       resources :enrollments
       resources :assignments do
         resources :grades
       end
-      get 'students', to: 'courses#students', on: :member
     end
     resources :people
 

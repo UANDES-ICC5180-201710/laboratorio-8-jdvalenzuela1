@@ -30,9 +30,7 @@ class EnrollmentsController < ApplicationController
 
     respond_to do |format|
       if @enrollment.save
-        format.html {
-          redirect_to action: 'students', controller: 'courses', :id => @course.id, notice: 'Enrollment was successfully created.'
-        }
+        format.html { redirect_to [@course, @enrollment], notice:'Enrollment was successfully created.'}
         format.json { render :show, status: :created, location: @enrollment }
       else
         format.html { render :new }
